@@ -1,4 +1,5 @@
 {
+  "installCommand": "npm --prefix click-react install",
   "buildCommand": "npm --prefix click-react run build",
   "outputDirectory": "click-react/dist",
   "rewrites": [

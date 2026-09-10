@@ -6,6 +6,6 @@
     "dev": "npm --prefix click-react run dev",
     "build": "npm --prefix click-react run build",
     "preview": "npm --prefix click-react run preview",
-    "install:all": "npm --prefix click-react install"
+    "postinstall": "npm --prefix click-react install"
   }
 }
