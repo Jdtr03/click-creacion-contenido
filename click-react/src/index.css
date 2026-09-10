@@ -18,11 +18,12 @@
 
 html {
     font-size: 14px;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
 }
 
 body {
     @apply bg-off-white text-navy antialiased overflow-x-hidden font-sans;
-    scroll-behavior: smooth;
 }
 
 /* Typography — Space Grotesk for headings, Inter for body text */

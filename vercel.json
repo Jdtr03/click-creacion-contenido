@@ -1,0 +1,10 @@
+{
+  "buildCommand": "npm --prefix click-react run build",
+  "outputDirectory": "click-react/dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

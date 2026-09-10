@@ -464,15 +464,16 @@ function CreacionContenido() {
                     </Link>
 
                     <div className="hidden md:flex items-center gap-10">
-                        <Link to="/" className="text-[11px] font-black uppercase tracking-[0.3em] text-white hover:text-primary transition-colors">Inicio</Link>
-                        <Link to="/creacion-contenido" className="text-[11px] font-black uppercase tracking-[0.3em] text-white hover:text-primary transition-colors">Contenido</Link>
-                        <Link to="/embudo-digital" className="text-[11px] font-black uppercase tracking-[0.3em] text-white hover:text-primary transition-colors">Embudo Digital</Link>
+                        <a href="#portafolio" className="text-[11px] font-black uppercase tracking-[0.3em] text-white hover:text-primary transition-colors">Portafolio</a>
+                        <a href="#servicios" className="text-[11px] font-black uppercase tracking-[0.3em] text-white hover:text-primary transition-colors">Servicios</a>
+                        <a href="#paquetes-contenido" className="text-[11px] font-black uppercase tracking-[0.3em] text-white hover:text-primary transition-colors">Planes</a>
+                        <a href="#condiciones" className="text-[11px] font-black uppercase tracking-[0.3em] text-white hover:text-primary transition-colors">Condiciones</a>
                     </div>
 
                     <div className="flex items-center gap-4">
-                        <Link to="/#auditoria" className="hidden sm:block btn-premium border border-white/20 text-white px-8 py-3.5 text-[11px] font-black transition-all uppercase tracking-[0.3em] hover:border-primary hover:bg-primary text-center">
-                            Auditoría Gratuita
-                        </Link>
+                        <a href="#paquetes-contenido" className="hidden sm:block btn-premium border border-white/20 text-white px-8 py-3.5 text-[11px] font-black transition-all uppercase tracking-[0.3em] hover:border-primary hover:bg-primary text-center">
+                            Elegir Plan
+                        </a>
 
                         <button
                             className="md:hidden flex flex-col gap-1.5 p-2"
@@ -504,31 +505,32 @@ function CreacionContenido() {
 
                     <div className="flex flex-col gap-6 w-full px-8 pt-10 flex-grow">
                         {[
-                            { label: 'Inicio', target: '/' },
-                            { label: 'Contenido', target: '/creacion-contenido' },
-                            { label: 'Embudo Digital', target: '/embudo-digital' }
+                            { label: 'Portafolio', target: '#portafolio' },
+                            { label: 'Servicios', target: '#servicios' },
+                            { label: 'Planes de Producción', target: '#paquetes-contenido' },
+                            { label: 'Condiciones', target: '#condiciones' }
                         ].map((item, idx) => (
-                            <Link
+                            <a
                                 key={item.label}
-                                to={item.target}
+                                href={item.target}
                                 onClick={() => setIsMenuOpen(false)}
                                 className={`text-2xl font-black text-white hover:text-primary uppercase tracking-tighter transition-all duration-700 ease-out flex items-end gap-3 border-b border-white/5 pb-4 ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
                                 style={{ transitionDelay: `${100 + (idx * 100)}ms` }}
                             >
                                 <span className="text-primary text-[10px] tracking-widest mb-1 font-bold">0{idx + 1}.</span>
                                 {item.label}
-                            </Link>
+                            </a>
                         ))}
                     </div>
 
                     <div className={`p-8 w-full mt-auto pb-12 transition-all duration-700 ease-out md:hidden ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} delay-300`}>
-                        <Link
-                            to="/#auditoria"
+                        <a
+                            href="#paquetes-contenido"
                             onClick={() => setIsMenuOpen(false)}
                             className="block w-full py-6 bg-primary text-white font-black uppercase tracking-widest text-center shadow-2xl text-sm"
                         >
-                            Auditoría Gratuita
-                        </Link>
+                            Elegir Plan
+                        </a>
                     </div>
                 </div>
             </div>
@@ -559,7 +561,7 @@ function CreacionContenido() {
                 </section>
 
                 {/* Carousel Section - True Full Width */}
-                <section className="w-full mb-32 reveal py-20 mesh-gradient-studio studio-texture border-y border-navy/5 overflow-hidden">
+                <section id="portafolio" className="scroll-mt-28 w-full mb-32 reveal py-20 mesh-gradient-studio studio-texture border-y border-navy/5 overflow-hidden">
                     <div className="max-w-[1900px] mx-auto">
                         <div className="mb-5 text-left px-8 sm:px-12 lg:px-16">
                             <span className="text-primary font-black uppercase tracking-[0.4em] text-[10px] md:text-sm mb-6 block border-l-4 border-primary pl-4 w-fit">
@@ -589,7 +591,7 @@ function CreacionContenido() {
 
                 {/* Rest of the content wrapped in container */}
                 <div className="max-w-[1400px] mx-auto px-6 md:px-20 px-8">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mb-40 border border-white/10">
+                    <div id="servicios" className="scroll-mt-28 grid grid-cols-1 md:grid-cols-3 gap-0 mb-40 border border-white/10">
                             {[
                                 { title: 'Video Vertical', desc: 'Optimizado para TikTok, Reels y Shorts con edición de alta retención.' },
                                 { title: 'Storytelling', desc: 'Narrativa de marca que conecta emocionalmente con tu cliente ideal.' },
@@ -603,7 +605,7 @@ function CreacionContenido() {
                         </div>
 
                         {/* Subscription Plans Section */}
-                        <section className="mb-40" id="paquetes-contenido">
+                        <section className="scroll-mt-28 mb-40" id="paquetes-contenido">
                             <div className="text-center mb-24">
                                 <span className="text-primary font-black uppercase tracking-[0.4em] text-sm mb-6 block">Inversión Inteligente</span>
                                 <h2 className="text-5xl md:text-[5.5rem] font-black uppercase tracking-tighter mb-8 leading-[0.8]">Planes de <span className="text-primary">Suscripción</span></h2>
@@ -787,7 +789,7 @@ function CreacionContenido() {
                             </div>
 
                             {/* Condiciones Generales Section with more breathing room */}
-                            <div className="max-w-4xl mx-auto p-12 border border-white/5 bg-white/[0.02] rounded-[3rem] mt-24 relative z-10 transition-all hover:bg-white/[0.03]">
+                            <div id="condiciones" className="scroll-mt-28 max-w-4xl mx-auto p-12 border border-white/5 bg-white/[0.02] rounded-[3rem] mt-24 relative z-10 transition-all hover:bg-white/[0.03]">
                                 <div className="flex items-center gap-4 mb-10 border-l-4 border-primary pl-6">
                                     <h4 className="text-sm font-black uppercase tracking-[0.4em] text-primary">Condiciones Generales</h4>
                                 </div>
@@ -812,9 +814,9 @@ function CreacionContenido() {
 
                         <div className="bg-primary/10 border border-primary/20 p-12 md:p-20 text-center rounded-[3rem]">
                             <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-8">¿Listo para escalar tu contenido?</h2>
-                            <Link to="#paquetes-contenido" className="inline-block btn-premium bg-primary text-white px-12 py-5 text-sm font-black uppercase tracking-widest hover:brightness-110 transition-all shadow-[0_20px_40px_-10px_rgba(241,90,36,0.4)]">
+                            <a href="#paquetes-contenido" className="inline-block btn-premium bg-primary text-white px-12 py-5 text-sm font-black uppercase tracking-widest hover:brightness-110 transition-all shadow-[0_20px_40px_-10px_rgba(241,90,36,0.4)]">
                                 selecciona el paquete que más se adapte a ti
-                            </Link>
+                            </a>
                         </div>
 
                         <footer className="bg-navy-accent/50 py-8 px-8 border-t border-white/5 text-center mt-12">
