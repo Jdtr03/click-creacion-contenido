@@ -4,16 +4,17 @@ import CreacionContenido from './pages/CreacionContenido';
 
 /**
  * Helper component to scroll to top on route change
- * and fire Meta Pixel PageView on each navigation
+ * and fire Meta Pixel PageView on each SPA navigation.
+ * NOTE: fbq('init') ya se ejecuta en index.html — aquí solo
+ * disparamos eventos en navegaciones subsiguientes (SPA).
  */
-// ID de píxel para CreacionContenido (Suscripciones audiovisuales / Campañas Meta)
 const PIXEL_CONTENIDO = '673387272426495';
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    // Disparar PageView al píxel de Creación de Contenido
+    // Disparar PageView en cada cambio de ruta (navegación SPA)
     if (typeof window.fbq === 'function') {
       window.fbq('trackSingle', PIXEL_CONTENIDO, 'PageView');
     }

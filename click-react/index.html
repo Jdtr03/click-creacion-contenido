@@ -21,7 +21,7 @@
   <meta property="og:description" content="Programas de producción audiovisual recurrente de alto nivel para marcas y empresas." />
   <meta property="og:type" content="website" />
 
-  <!-- Meta Pixel SDK (global) — init por página en React -->
+  <!-- Meta Pixel Code -->
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -31,13 +31,19 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    /* NO fbq('init') aquí — cada página inicializa su propio píxel */
+    fbq('init', '673387272426495');
+    fbq('track', 'PageView');
   </script>
-  <!-- End Meta Pixel SDK -->
+  <!-- End Meta Pixel Code -->
 </head>
 
 <body>
   <div id="root"></div>
+  <!-- Meta Pixel noscript fallback -->
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=673387272426495&ev=PageView&noscript=1" />
+  </noscript>
   <script type="module" src="/src/main.jsx"></script>
 </body>
 
